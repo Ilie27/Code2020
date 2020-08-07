@@ -9,4 +9,11 @@ public class BlockCell extends ShadedCell
  {
 	 super( mc,  row,  col,blockShadeColor);
  }
+ 
+ @Override
+ public boolean getVisited()
+ {
+ 	return true;
+ }
+ 
 }

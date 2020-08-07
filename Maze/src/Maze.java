@@ -77,7 +77,46 @@ public class Maze {
 			return EntryC;
 		}
 
-
+public Cell  getNeighbor(Cell cell, Side side) 
+{
+	if(side==Side.Right)
+	{
+		if (cell.getCol()>mc.getCols()-2)
+			return null;
+		else
+		return gridOfCells[cell.getRow()][cell.getCol()+1];
+	}
+	
+	if(side==Side.Top)
+	{
+		if (cell.getRow()<1)
+			return null;
+		else
+		return gridOfCells[cell.getRow()-1][cell.getCol()];
+	}
+	
+	
+	
+	if(side==Side.Left)
+	{
+		if (cell.getCol()<1)
+			return null;
+		else
+		return gridOfCells[cell.getRow()][cell.getCol()-1];
+	}
+	
+	if(side==Side.Bottom)
+	{
+		if (cell.getRow()>mc.getCols()-2)
+			return null;
+		else
+		return gridOfCells[cell.getRow()+1][cell.getCol()];
+	}
+	
+	
+	return null;
+	
+}
 
 
 

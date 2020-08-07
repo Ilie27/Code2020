@@ -8,6 +8,7 @@ public int row;
 public int col;
 public MazeCanvas mc;
 public ArrayList<Side> listOfWalls= new  ArrayList<Side>();
+public boolean visited = false;
 
 public Cell (MazeCanvas mc, int row, int col)
 	{
@@ -19,6 +20,7 @@ public Cell (MazeCanvas mc, int row, int col)
 	listOfWalls.add(Side.Bottom);
 	listOfWalls.add(Side.Left);
 	mc.drawCell(row, col);
+	
 	}
 
 
@@ -41,12 +43,33 @@ public int getCol()
 	return col;
 	}
 
+public boolean getVisited()
+{
+	return visited;
+}
+
+public void setVisited(boolean n)
+{
+	visited=n;
+}
+
 public void removeWall(Side side)
 	{
 	mc.eraseWall(row, col, side);
 	listOfWalls.remove(side);
 	
 	}
+
+public ArrayList<Side> getPaths() 
+{
+	ArrayList<Side> listOfPaths= new ArrayList<Side>();
+	listOfPaths.add(Side.Top);
+	listOfPaths.add(Side.Right);
+	listOfPaths.add(Side.Bottom);
+	listOfPaths.add(Side.Left);
+	listOfPaths.removeAll(listOfWalls);
+	return listOfPaths;
+}
 
 
 

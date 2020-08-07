@@ -3,7 +3,7 @@ import java.awt.Color;
 import graphics.MazeCanvas;
 public class ExitCell extends EdgeCell
 {
-	public static final Color exitShadeColor= Color.GREEN;
+	public static final Color exitShadeColor= Color.RED;
 	public ExitCell(MazeCanvas mc, int row, int col)
 			{
 		super( mc,  row,  col);

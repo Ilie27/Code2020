@@ -5,7 +5,7 @@ import graphics.MazeCanvas.Side;
 
 public class EdgeCell extends ShadedCell
 {
-	public static final Color edgeColor= new Color (100,50,200);
+	public static final Color edgeColor= new Color (100,200,150);
 	public ArrayList<Side> listOfEdges= new ArrayList<Side>();
 public EdgeCell(MazeCanvas mc, int row, int col)
 	{
@@ -38,6 +38,15 @@ public ArrayList<Side> getWalls()
 	return walls;
 
 }
+
+public ArrayList<Side> getPaths() 
+{
+	
+	ArrayList<Side> listOfPathsEdge=super.getPaths();
+	listOfPathsEdge.removeAll(listOfEdges);
+	return listOfPathsEdge;
+}
+
 
 
 	
